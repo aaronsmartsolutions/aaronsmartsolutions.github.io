@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Smart Lead Finder Tool</title>
+
+  <style>
+    body {
+      background:#0f172a;
+      color:white;
+      text-align:center;
+      font-family:Arial;
+      padding:30px;
+    }
+    input {
+      padding:10px;
+      margin:5px;
+      width:250px;
+      border-radius:5px;
+      border:none;
+    }
+    button {
+      padding:10px 20px;
+      margin:10px;
+      background:#38bdf8;
+      border:none;
+      border-radius:5px;
+      cursor:pointer;
+      font-weight:bold;
+    }
+    table {
+      width:100%;
+      margin-top:20px;
+      border-collapse:collapse;
+      background:white;
+      color:black;
+    }
+    th, td {
+      border:1px solid #ccc;
+      padding:10px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+<h1>🚀 Find Clients in Any City (FREE Tool)</h1>
+
+<!-- 🔥 BANNER AD -->
+
+<div style="margin:20px 0;">
+<script>
+  atOptions = {
+    'key' : '4d88272a1797ea441b327470a9b3d9c1',
+    'format' : 'iframe',
+    'height' : 250,
+    'width' : 300,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/4d88272a1797ea441b327470a9b3d9c1/invoke.js"></script>
+</div>
+
+<p>Enter your niche and location to find leads and build your own client list.</p>
+
+<input id="niche" placeholder="Enter Niche (e.g. Real Estate)">
+<br>
+<input id="location" placeholder="Enter Location (e.g. Lahore)">
+<br>
+
+<button onclick="generate()">🔥 Generate Leads</button>
+
+<div id="results"></div>
+
+<hr>
+
+<h2>📋 Build Your Lead Sheet</h2>
+
+<input id="name" placeholder="Business Name">
+<input id="phone" placeholder="Phone Number">
+<input id="address" placeholder="Address">
+
+<br>
+<button onclick="addLead()">➕ Add Lead</button>
+<button onclick="downloadCSV()">⬇ Download Excel Sheet</button>
+
+<table id="table">
+<tr>
+<th>Name</th>
+<th>Phone</th>
+<th>Address</th>
+</tr>
+</table>
+
+<script>
+function generate() {
+
+  // 🔥 SMART POPUNDER (only on click)
+  var s = document.createElement('script');
+  s.src = "https://pl29141385.profitablecpmratenetwork.com/54/db/51/54db519378cf12979089f1cb3c3c0b8f.js";
+  document.body.appendChild(s);
+
+  let niche = document.getElementById("niche").value;
+  let location = document.getElementById("location").value;
+
+  let html = `
+    <h3>🔍 Search Leads</h3>
+
+    <a href="https://www.google.com/maps/search/${niche}+${location}" target="_blank">
+    📍 Open Google Maps Results</a><br><br>
+
+    <a href="https://www.google.com/search?q=${niche}+${location}" target="_blank">
+    🌐 Search on Google</a>
+  `;
+
+  document.getElementById("results").innerHTML = html;
+}
+
+function addLead() {
+  let name = document.getElementById("name").value;
+  let phone = document.getElementById("phone").value;
+  let address = document.getElementById("address").value;
+
+  if(name === "" || phone === "") {
+    alert("Please enter Name and Phone");
+    return;
+  }
+
+  let table = document.getElementById("table");
+
+  let row = table.insertRow();
+  row.insertCell(0).innerHTML = name;
+  row.insertCell(1).innerHTML = phone;
+  row.insertCell(2).innerHTML = address;
+
+  document.getElementById("name").value = "";
+  document.getElementById("phone").value = "";
+  document.getElementById("address").value = "";
+}
+
+function downloadCSV() {
+  let table = document.getElementById("table");
+  let csv = [];
+
+  for (let i = 0; i < table.rows.length; i++) {
+    let row = [], cols = table.rows[i].cells;
+
+    for (let j = 0; j < cols.length; j++) {
+      row.push(cols[j].innerText);
+    }
+
+    csv.push(row.join(","));
+  }
+
+  let csvFile = new Blob([csv.join("\n")], { type: "text/csv" });
+  let downloadLink = document.createElement("a");
+  downloadLink.download = "leads.csv";
+  downloadLink.href = window.URL.createObjectURL(csvFile);
+  downloadLink.click();
+}
+</script>
+
+</body>
+</html>
